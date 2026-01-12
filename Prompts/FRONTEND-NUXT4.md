@@ -17,7 +17,7 @@ Implémente le frontend avec **Nuxt 3**.
 
 - **Node.js** : 22.x LTS
 - **TypeScript** : 5.x
-- **Nuxt** : 3.x (dernière version stable)
+- **Nuxt** : 4.x (dernière version stable)
 - **Vue** : 3.x
 - **TanStack Query (Vue Query)** : v5
 
