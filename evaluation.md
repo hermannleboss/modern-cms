@@ -1,4 +1,87 @@
-# GRILLE DE COMPARAISON OBJECTIVE (STACK & IA)
+# 1️⃣ C’est quoi un prompt **“IA auto-correctrice”** ?
+
+Un prompt **IA auto-correctrice** est un prompt qui demande à l’IA de :
+
+1. **Coder**
+2. **S’auto-relire**
+3. **S’auto-critiquer**
+4. **Corriger son propre code**
+5. **Justifier les décisions**
+
+👉 Tu ne demandes plus _“génère du code”_
+👉 Tu demandes _“génère → audite → améliore”_
+
+C’est exactement ce que ferait un **senior + reviewer + tech lead**.
+
+---
+
+## 🔁 Cycle d’une IA auto-correctrice
+
+```text
+1. Génération initiale
+2. Analyse critique (architecture, sécurité, règles métier)
+3. Détection des erreurs / dettes techniques
+4. Refactor / correction
+5. Résumé des choix et limites
+```
+
+---
+
+## 🧠 PROMPT GÉNÉRIQUE — IA AUTO-CORRECTRICE
+
+👉 **Ce prompt est universel**, tu peux l’utiliser avec n’importe quelle techno.
+
+---
+
+### 🔹 PROMPT – IA AUTO-CORRECTRICE (À COPIER)
+
+> Tu dois implémenter le projet décrit dans la **Description fonctionnelle unique** fournie.
+>
+> **Étape 1 – Implémentation**
+>
+> - Génère le code complet demandé.
+> - Respecte strictement les contraintes techniques.
+>
+> **Étape 2 – Auto-review critique**
+> Analyse ton propre code comme un **reviewer senior** et identifie :
+>
+> - violations d’architecture
+> - problèmes de sécurité
+> - duplications inutiles
+> - logique métier mal placée
+> - couplage excessif
+>
+> **Étape 3 – Correction**
+>
+> - Corrige les problèmes identifiés
+> - Refactor si nécessaire
+>
+> **Étape 4 – Justification**
+>
+> - Explique brièvement les décisions finales
+> - Liste les compromis et limites
+>
+> ⚠️ Interdictions :
+>
+> - ne pas simplifier les règles métier
+> - ne pas ignorer les permissions
+> - ne pas déplacer la sécurité côté frontend
+>
+> 🎯 Objectif : produire un code **production-ready**, maintenable par une équipe senior.
+
+---
+
+## Pourquoi ce prompt est puissant
+
+- réduit les hallucinations
+- force la cohérence
+- expose les limites
+- améliore la qualité moyenne du code IA
+- rend les stacks comparables
+
+---
+
+# 2️⃣ GRILLE DE COMPARAISON OBJECTIVE (STACK & IA)
 
 👉 Cette grille te permet de comparer :
 
@@ -108,13 +191,13 @@ Tu peux comparer :
 
 ---
 
-## CRITÈRES D’ÉVALUATION DU CODE GÉNÉRÉ PAR IA
+# 3️⃣ CRITÈRES D’ÉVALUATION DU CODE GÉNÉRÉ PAR IA
 
 👉 À utiliser **à froid**, après génération.
 
 ---
 
-### ❌ Red flags (échec immédiat)
+## ❌ Red flags (échec immédiat)
 
 - `if (user.role === 'admin')`
 - logique métier dans les composants
@@ -126,7 +209,7 @@ Tu peux comparer :
 
 ---
 
-### ✅ Signes de code senior
+## ✅ Signes de code senior
 
 - fonctions `can()` centralisées
 - règles métier isolées
@@ -137,7 +220,7 @@ Tu peux comparer :
 
 ---
 
-### 🧪 Test ultime
+## 🧪 Test ultime
 
 Pose cette question à l’IA après génération :
 
@@ -147,9 +230,9 @@ Une bonne implémentation **sait répondre**.
 
 ---
 
-Comment exploiter ça concrètement
+# 4️⃣ Comment exploiter ça concrètement
 
-Méthode recommandée
+### Méthode recommandée
 
 1. même description fonctionnelle
 2. même prompt auto-correcteur
