@@ -13,6 +13,15 @@ Le code doit être structuré, scalable et production-ready.
 
 Implémente le frontend avec **Vue 3 + TypeScript + Axios + TanStack Query**.
 
+### Versions requises
+
+- **Node.js** : 22.x LTS
+- **TypeScript** : 5.x
+- **Vue** : 3.x (dernière version stable)
+- **Vue Router** : v4
+- **TanStack Query (Vue Query)** : v5
+- **Axios** : dernière version stable
+
 ### Contraintes
 
 - architecture feature-based
@@ -21,6 +30,10 @@ Implémente le frontend avec **Vue 3 + TypeScript + Axios + TanStack Query**.
 - DTO + mapper pour l'API
 - permissions via `can(permission)`
 - aucune logique métier dans les composants
+
+### Structure du projet
+
+**Le code doit être généré dans le dossier : `./frontend/vue3/`**
 
 ### À fournir
 

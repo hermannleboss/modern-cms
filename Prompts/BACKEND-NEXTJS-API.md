@@ -13,12 +13,23 @@ Le code doit être structuré, scalable et production-ready.
 
 Implémente le backend avec **Next.js Route Handlers**.
 
+### Versions requises
+
+- **Node.js** : 22.x LTS
+- **TypeScript** : 5.x
+- **Next.js** : 15.x (App Router)
+- **Prisma** : 6.x
+
 ### Contraintes
 
 - Prisma
 - JWT
 - permissions middleware
 - API REST
+
+### Structure du projet
+
+**Le code doit être généré dans le dossier : `./backend/nextjs-api/`**
 
 ### À fournir
 

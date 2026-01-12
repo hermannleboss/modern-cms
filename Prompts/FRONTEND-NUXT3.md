@@ -13,6 +13,14 @@ Le code doit être structuré, scalable et production-ready.
 
 Implémente le frontend avec **Nuxt 3**.
 
+### Versions requises
+
+- **Node.js** : 22.x LTS
+- **TypeScript** : 5.x
+- **Nuxt** : 3.x (dernière version stable)
+- **Vue** : 3.x
+- **TanStack Query (Vue Query)** : v5
+
 ### Contraintes
 
 - `$fetch` ou Nitro
@@ -20,6 +28,10 @@ Implémente le frontend avec **Nuxt 3**.
 - middleware Nuxt pour auth
 - layouts pour admin/public
 - composables pour permissions
+
+### Structure du projet
+
+**Le code doit être généré dans le dossier : `./frontend/nuxt3/`**
 
 ### À fournir
 

@@ -13,6 +13,13 @@ Le code doit être structuré, scalable et production-ready.
 
 Implémente le backend avec **NestJS + TypeScript + Prisma**.
 
+### Versions requises
+
+- **Node.js** : 22.x LTS
+- **TypeScript** : 5.x
+- **NestJS** : 10.x
+- **Prisma** : 6.x
+
 ### Contraintes
 
 - REST API
@@ -21,6 +28,10 @@ Implémente le backend avec **NestJS + TypeScript + Prisma**.
 - Guards pour auth & permissions
 - Prisma comme ORM
 - décorateurs personnalisés pour permissions
+
+### Structure du projet
+
+**Le code doit être généré dans le dossier : `./backend/nestjs/`**
 
 ### À fournir
 

@@ -13,6 +13,14 @@ Le code doit être structuré, scalable et production-ready.
 
 Implémente le frontend avec **Next.js App Router**.
 
+### Versions requises
+
+- **Node.js** : 22.x LTS
+- **TypeScript** : 5.x
+- **Next.js** : 15.x (App Router)
+- **React** : 19.x
+- **TanStack Query (React Query)** : v5
+
 ### Contraintes
 
 - Server Components pour lecture
@@ -20,6 +28,10 @@ Implémente le frontend avec **Next.js App Router**.
 - TanStack Query côté client
 - fetch natif
 - middleware auth
+
+### Structure du projet
+
+**Le code doit être généré dans le dossier : `./frontend/nextjs/`**
 
 ### À fournir
 

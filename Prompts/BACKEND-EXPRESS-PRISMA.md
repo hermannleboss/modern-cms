@@ -13,6 +13,13 @@ Le code doit être structuré, scalable et production-ready.
 
 Implémente le backend avec **Express + TypeScript + Prisma**.
 
+### Versions requises
+
+- **Node.js** : 22.x LTS
+- **TypeScript** : 5.x
+- **Express** : 5.x
+- **Prisma** : 6.x
+
 ### Contraintes
 
 - REST API
@@ -20,6 +27,10 @@ Implémente le backend avec **Express + TypeScript + Prisma**.
 - permissions granulaires
 - middleware auth & permissions
 - Prisma comme ORM
+
+### Structure du projet
+
+**Le code doit être généré dans le dossier : `./backend/express-prisma/`**
 
 ### À fournir
 

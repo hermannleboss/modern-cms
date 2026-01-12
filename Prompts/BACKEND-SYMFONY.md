@@ -13,12 +13,22 @@ Le code doit être structuré, scalable et production-ready.
 
 Implémente le backend avec **Symfony**.
 
+### Versions requises
+
+- **PHP** : 8.3
+- **Symfony** : 7.x
+- **Doctrine ORM** : dernière version compatible
+
 ### Contraintes
 
 - API REST
 - Security + Voters pour permissions
 - Doctrine ORM
 - DTO pour API
+
+### Structure du projet
+
+**Le code doit être généré dans le dossier : `./backend/symfony/`**
 
 ### À fournir
 

@@ -13,6 +13,15 @@ Le code doit être structuré, scalable et production-ready.
 
 Implémente le frontend avec **React + TypeScript**.
 
+### Versions requises
+
+- **Node.js** : 22.x LTS
+- **TypeScript** : 5.x
+- **React** : 19.x
+- **React Router** : v6
+- **TanStack Query (React Query)** : v5
+- **Axios** : dernière version stable
+
 ### Contraintes
 
 - TanStack Query obligatoire
@@ -20,6 +29,10 @@ Implémente le frontend avec **React + TypeScript**.
 - React Router
 - architecture feature-based
 - hooks métiers séparés
+
+### Structure du projet
+
+**Le code doit être généré dans le dossier : `./frontend/react/`**
 
 ### À fournir
 

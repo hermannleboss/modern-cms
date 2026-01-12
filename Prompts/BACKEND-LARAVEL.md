@@ -13,12 +13,22 @@ Le code doit être structuré, scalable et production-ready.
 
 Implémente le backend avec **Laravel**.
 
+### Versions requises
+
+- **PHP** : 8.3
+- **Laravel** : 11.x
+- **Laravel Sanctum** : dernière version compatible
+
 ### Contraintes
 
 - API REST
 - Policies & Gates
 - Eloquent ORM
 - Sanctum ou JWT
+
+### Structure du projet
+
+**Le code doit être généré dans le dossier : `./backend/laravel/`**
 
 ### À fournir
 
