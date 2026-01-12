@@ -15,15 +15,15 @@ Implémente le frontend avec **Vue 3 + TypeScript + Axios + TanStack Query**.
 
 ### Contraintes
 
-* architecture feature-based
-* aucun appel Axios dans les composants
-* TanStack Query = source de vérité
-* DTO + mapper pour l'API
-* permissions via `can(permission)`
-* aucune logique métier dans les composants
+- architecture feature-based
+- aucun appel Axios dans les composants
+- TanStack Query = source de vérité
+- DTO + mapper pour l'API
+- permissions via `can(permission)`
+- aucune logique métier dans les composants
 
 ### À fournir
 
-* structure de dossiers
-* module Articles complet
-* flow d'édition avec permissions
+- structure de dossiers
+- module Articles complet
+- flow d'édition avec permissions

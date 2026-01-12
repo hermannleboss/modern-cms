@@ -15,15 +15,15 @@ Implémente le backend avec **Express + TypeScript + Prisma**.
 
 ### Contraintes
 
-* REST API
-* JWT access + refresh
-* permissions granulaires
-* middleware auth & permissions
-* Prisma comme ORM
+- REST API
+- JWT access + refresh
+- permissions granulaires
+- middleware auth & permissions
+- Prisma comme ORM
 
 ### À fournir
 
-* schema Prisma
-* module Articles
-* middleware permissions
-* endpoint `/me`
+- schema Prisma
+- module Articles
+- middleware permissions
+- endpoint `/me`

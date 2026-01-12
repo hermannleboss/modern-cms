@@ -15,13 +15,13 @@ Implémente le backend avec **Symfony**.
 
 ### Contraintes
 
-* API REST
-* Security + Voters pour permissions
-* Doctrine ORM
-* DTO pour API
+- API REST
+- Security + Voters pour permissions
+- Doctrine ORM
+- DTO pour API
 
 ### À fournir
 
-* entités principales
-* Voters permissions
-* contrôleurs Articles
+- entités principales
+- Voters permissions
+- contrôleurs Articles

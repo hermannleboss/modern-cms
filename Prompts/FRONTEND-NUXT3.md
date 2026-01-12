@@ -15,14 +15,14 @@ Implémente le frontend avec **Nuxt 3**.
 
 ### Contraintes
 
-* `$fetch` ou Nitro
-* TanStack Query pour la gestion des données
-* middleware Nuxt pour auth
-* layouts pour admin/public
-* composables pour permissions
+- `$fetch` ou Nitro
+- TanStack Query pour la gestion des données
+- middleware Nuxt pour auth
+- layouts pour admin/public
+- composables pour permissions
 
 ### À fournir
 
-* pages Articles
-* composables data
-* middleware auth & permissions
+- pages Articles
+- composables data
+- middleware auth & permissions

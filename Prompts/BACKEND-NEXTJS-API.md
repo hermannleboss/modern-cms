@@ -15,13 +15,13 @@ Implémente le backend avec **Next.js Route Handlers**.
 
 ### Contraintes
 
-* Prisma
-* JWT
-* permissions middleware
-* API REST
+- Prisma
+- JWT
+- permissions middleware
+- API REST
 
 ### À fournir
 
-* route handlers Articles
-* auth middleware
-* permissions check
+- route handlers Articles
+- auth middleware
+- permissions check

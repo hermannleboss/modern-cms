@@ -15,14 +15,14 @@ Implémente le frontend avec **React + TypeScript**.
 
 ### Contraintes
 
-* TanStack Query obligatoire
-* Axios pour HTTP
-* React Router
-* architecture feature-based
-* hooks métiers séparés
+- TanStack Query obligatoire
+- Axios pour HTTP
+- React Router
+- architecture feature-based
+- hooks métiers séparés
 
 ### À fournir
 
-* hooks Articles
-* composants d'édition
-* gestion permissions UI
+- hooks Articles
+- composants d'édition
+- gestion permissions UI

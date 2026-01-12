@@ -15,14 +15,14 @@ Implémente le backend avec **Laravel**.
 
 ### Contraintes
 
-* API REST
-* Policies & Gates
-* Eloquent ORM
-* Sanctum ou JWT
+- API REST
+- Policies & Gates
+- Eloquent ORM
+- Sanctum ou JWT
 
 ### À fournir
 
-* models
-* policies
-* controllers Articles
-* endpoint `/me`
+- models
+- policies
+- controllers Articles
+- endpoint `/me`
