@@ -10,6 +10,7 @@ import {
 } from "@/lib/errors";
 
 const LOCK_DURATION_MINUTES = 30;
+const MS_PER_MINUTE = 60 * 1000;
 
 export async function POST(
   request: NextRequest,
@@ -63,7 +64,7 @@ export async function POST(
         articleId,
         userId: auth.userId,
         expiresAt: new Date(
-          Date.now() + LOCK_DURATION_MINUTES * 60 * 1000
+          Date.now() + LOCK_DURATION_MINUTES * MS_PER_MINUTE
         ),
       },
       include: {
