@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import { errorMiddleware } from './middlewares/error.middleware';
+import { apiLimiter } from './middlewares/rate-limit.middleware';
 import authRoutes from './modules/auth/auth.routes';
 import usersRoutes from './modules/users/users.routes';
 import articlesRoutes from './modules/articles/articles.routes';
@@ -16,6 +17,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use(morgan('combined'));
+app.use('/api', apiLimiter);
 
 // Health check
 app.get('/api/health', (_req, res) => {
