@@ -1,15 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useCategories } from '../composables/useCategories';
-import { usePermissions } from '@/shared/composables/usePermissions';
 import { extractApiError } from '@/shared/api/api-error';
 import PermissionGuard from '@/shared/components/PermissionGuard.vue';
 import type { Category } from '../types/category.model';
 
 const { categories, isLoading, createCategory, updateCategory, deleteCategory, isCreating } = useCategories();
-
-// usePermissions is used via PermissionGuard in template
-void usePermissions();
 
 const showForm = ref(false);
 const editingCategory = ref<Category | null>(null);

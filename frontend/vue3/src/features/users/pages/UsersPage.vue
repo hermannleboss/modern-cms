@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useUsers } from '../composables/useUsers';
-import { usePermissions } from '@/shared/composables/usePermissions';
 import { extractApiError } from '@/shared/api/api-error';
 import { formatDate } from '@/shared/utils/date';
 import PermissionGuard from '@/shared/components/PermissionGuard.vue';
 
 const { users, isLoading, inviteUser, isInviting } = useUsers();
-const { can } = usePermissions();
 
 const showInviteForm = ref(false);
 const inviteName = ref('');
@@ -40,9 +38,6 @@ async function handleInvite() {
     errorMessage.value = extractApiError(err).message;
   }
 }
-
-// Suppress unused variable warning
-void can;
 </script>
 
 <template>

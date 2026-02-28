@@ -7,6 +7,7 @@ import { useTags } from '@/features/tags/composables/useTags';
 const props = defineProps<{
   article?: Article;
   isSubmitting: boolean;
+  disabled?: boolean;
 }>();
 
 const emit = defineEmits<{
@@ -59,6 +60,7 @@ function toggleTag(tagName: string) {
 
 <template>
   <form class="article-form" @submit.prevent="handleSubmit">
+    <fieldset :disabled="disabled">
     <div class="form-group">
       <label for="title">Title</label>
       <input id="title" v-model="title" type="text" required placeholder="Article title" />
@@ -105,10 +107,11 @@ function toggleTag(tagName: string) {
 
     <div class="form-actions">
       <button type="button" class="btn-secondary" @click="$emit('cancel')">Cancel</button>
-      <button type="submit" class="btn-primary" :disabled="isSubmitting">
+      <button type="submit" class="btn-primary" :disabled="isSubmitting || disabled">
         {{ isSubmitting ? 'Saving...' : (article ? 'Update' : 'Create') }}
       </button>
     </div>
+    </fieldset>
   </form>
 </template>
 

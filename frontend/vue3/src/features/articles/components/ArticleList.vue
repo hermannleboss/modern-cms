@@ -19,13 +19,13 @@ defineEmits<{
     <div v-else-if="articles.length === 0" class="empty-state">
       No articles found. Create your first article!
     </div>
-    <div
-      v-for="article in articles"
-      v-else
-      :key="article.id"
-      class="article-card"
-      @click="$emit('select', article)"
-    >
+    <template v-else>
+      <div
+        v-for="article in articles"
+        :key="article.id"
+        class="article-card"
+        @click="$emit('select', article)"
+      >
       <div class="article-header">
         <h3 class="article-title">{{ article.title }}</h3>
         <ArticleStatusBadge :status="article.status" />
@@ -41,6 +41,7 @@ defineEmits<{
         <span v-if="article.lock" class="lock-indicator">🔒</span>
       </div>
     </div>
+    </template>
   </div>
 </template>
 

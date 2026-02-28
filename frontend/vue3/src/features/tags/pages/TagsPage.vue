@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useTags } from '../composables/useTags';
-import { usePermissions } from '@/shared/composables/usePermissions';
 import { extractApiError } from '@/shared/api/api-error';
 import PermissionGuard from '@/shared/components/PermissionGuard.vue';
 import type { Tag } from '../types/tag.model';
 
 const { tags, isLoading, createTag, updateTag, deleteTag, isCreating } = useTags();
-const { can } = usePermissions();
 
 const showForm = ref(false);
 const editingTag = ref<Tag | null>(null);
@@ -58,8 +56,7 @@ async function handleDelete(tag: Tag) {
   }
 }
 
-// Suppress unused variable warning - can is used in template via PermissionGuard
-void can;
+
 </script>
 
 <template>
