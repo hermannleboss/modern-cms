@@ -23,12 +23,12 @@ readonly class CategoryResponseDTO
     ) {
     }
 
-    public static function fromEntity(Category $category, bool $includeChildren = true): self
+    public static function fromEntity(Category $category, bool $includeChildren = true, int $maxDepth = 5): self
     {
         $children = [];
-        if ($includeChildren) {
+        if ($includeChildren && $maxDepth > 0) {
             foreach ($category->getChildren() as $child) {
-                $children[] = self::fromEntity($child, true);
+                $children[] = self::fromEntity($child, true, $maxDepth - 1);
             }
         }
 
