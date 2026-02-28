@@ -330,13 +330,6 @@ class ArticleController extends AbstractController
             return $this->json(['error' => 'Article not found'], Response::HTTP_NOT_FOUND);
         }
 
-        if ($article->getStatus() !== ArticleStatus::DRAFT) {
-            return $this->json(
-                ['error' => 'Article must be a draft to submit for review'],
-                Response::HTTP_BAD_REQUEST,
-            );
-        }
-
         /** @var \App\Entity\User $user */
         $user = $this->getUser();
         $isAuthorOrCoAuthor = $article->getAuthor() === $user
@@ -346,6 +339,13 @@ class ArticleController extends AbstractController
             return $this->json(
                 ['error' => 'Only the author or co-authors can submit for review'],
                 Response::HTTP_FORBIDDEN,
+            );
+        }
+
+        if ($article->getStatus() !== ArticleStatus::DRAFT) {
+            return $this->json(
+                ['error' => 'Article must be a draft to submit for review'],
+                Response::HTTP_BAD_REQUEST,
             );
         }
 
@@ -393,7 +393,7 @@ class ArticleController extends AbstractController
 
         // Only the lock holder or an admin can unlock
         $isLockHolder = $article->getLockedBy() !== null
-            && $article->getLockedBy()->getId()?->toRfc4122() === $user->getId()?->toRfc4122();
+            && $article->getLockedBy() === $user;
         $isAdmin = $this->isGranted('ROLE_ADMIN');
 
         if (!$isLockHolder && !$isAdmin) {
