@@ -16,7 +16,7 @@ Implémente le backend avec **Laravel**.
 ### Versions requises
 
 - **PHP** : 8.3
-- **Laravel** : 11.x
+- **Laravel** : 12.x
 - **Laravel Sanctum** : dernière version compatible
 
 ### Contraintes
