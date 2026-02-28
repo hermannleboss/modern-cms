@@ -57,7 +57,7 @@
           {{ article.excerpt }}
         </div>
 
-        <div class="prose max-w-none" v-html="article.content" />
+        <div class="prose max-w-none" v-html="sanitizedContent" />
 
         <!-- Co-authors -->
         <div v-if="article.coAuthors.length" class="mt-8 pt-4 border-t">
@@ -151,6 +151,8 @@
 </template>
 
 <script setup lang="ts">
+import { sanitizeHtml } from '~/utils/sanitize';
+
 definePageMeta({
   layout: 'admin',
   middleware: ['auth'],
@@ -164,6 +166,11 @@ const { data: history, isLoading: isHistoryLoading } = useArticleHistory(id);
 const { hasPermission, canEditArticle } = usePermissions();
 const { forceUnlock } = useArticleLock(id);
 const updateStatus = useUpdateArticleStatus();
+
+const sanitizedContent = computed(() => {
+  if (!article.value?.content) return '';
+  return sanitizeHtml(article.value.content);
+});
 
 function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleString();
