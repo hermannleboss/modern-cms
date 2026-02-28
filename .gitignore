@@ -1,0 +1,3 @@
+backend/symfony/vendor/
+backend/symfony/var/
+backend/symfony/.phpunit.cache/
