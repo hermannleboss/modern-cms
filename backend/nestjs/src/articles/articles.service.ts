@@ -153,7 +153,7 @@ export class ArticlesService {
       userId,
       updated.title,
       updated.content,
-      updated.excerpt,
+      updated.excerpt ?? undefined,
     );
 
     return updated;

@@ -276,7 +276,7 @@ describe('ArticlesService', () => {
 
       const result = await service.releaseLock('article-1', 'user-1');
 
-      expect(result.message).toBe('Lock released');
+      expect(result!.message).toBe('Lock released');
     });
 
     it("should throw ForbiddenException when releasing another user's lock", async () => {
