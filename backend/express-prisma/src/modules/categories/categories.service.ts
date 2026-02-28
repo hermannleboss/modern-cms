@@ -1,3 +1,4 @@
+import { Prisma } from '@prisma/client';
 import prisma from '../../utils/prisma';
 import { AppError } from '../../middlewares/error.middleware';
 import { slugify } from '../../utils/slugify';
@@ -68,7 +69,7 @@ export class CategoriesService {
       throw new AppError('Category not found', 404);
     }
 
-    const updateData: any = {};
+    const updateData: Prisma.CategoryUncheckedUpdateInput = {};
 
     if (dto.name) {
       updateData.name = dto.name;

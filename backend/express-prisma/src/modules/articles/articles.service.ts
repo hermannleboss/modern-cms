@@ -1,4 +1,4 @@
-import { ArticleStatus } from '@prisma/client';
+import { ArticleStatus, Prisma } from '@prisma/client';
 import prisma from '../../utils/prisma';
 import { AppError } from '../../middlewares/error.middleware';
 import { can } from '../../permissions/can';
@@ -6,6 +6,24 @@ import { PERMISSIONS } from '../../permissions/permissions';
 import { slugify } from '../../utils/slugify';
 import { config } from '../../config';
 import { CreateArticleDto, UpdateArticleDto, UpdateStatusDto } from './articles.dto';
+
+type ArticleWithRelations = Prisma.ArticleGetPayload<{
+  include: {
+    author: { select: { id: true; firstName: true; lastName: true; email: true } };
+    coAuthors: {
+      include: {
+        user: { select: { id: true; firstName: true; lastName: true; email: true } };
+      };
+    };
+    categories: { include: { category: true } };
+    tags: { include: { tag: true } };
+    lock: {
+      include: {
+        user: { select: { id: true; firstName: true; lastName: true } };
+      };
+    };
+  };
+}>;
 
 export class ArticlesService {
   async findAll(page = 1, limit = 20, status?: ArticleStatus) {
@@ -107,7 +125,7 @@ export class ArticlesService {
     // Check lock
     await this.checkLock(articleId, userId);
 
-    const updateData: any = {};
+    const updateData: Prisma.ArticleUpdateInput = {};
     if (dto.title) {
       updateData.title = dto.title;
       updateData.slug = await this.generateUniqueSlug(dto.title, articleId);
@@ -174,7 +192,7 @@ export class ArticlesService {
       }
     }
 
-    const updateData: any = { status: dto.status };
+    const updateData: Prisma.ArticleUpdateInput = { status: dto.status };
     if (dto.status === ArticleStatus.PUBLISHED) {
       updateData.publishedAt = new Date();
     }
@@ -363,7 +381,7 @@ export class ArticlesService {
     }
   }
 
-  private async recordHistory(articleId: string, userId: string, article: any) {
+  private async recordHistory(articleId: string, userId: string, article: ArticleWithRelations) {
     await prisma.articleHistory.create({
       data: {
         articleId,
@@ -394,7 +412,7 @@ export class ArticlesService {
     };
   }
 
-  private toDto(article: any) {
+  private toDto(article: ArticleWithRelations) {
     return {
       id: article.id,
       title: article.title,
@@ -406,9 +424,9 @@ export class ArticlesService {
       createdAt: article.createdAt,
       updatedAt: article.updatedAt,
       author: article.author,
-      coAuthors: article.coAuthors?.map((ca: any) => ca.user) || [],
-      categories: article.categories?.map((ac: any) => ac.category) || [],
-      tags: article.tags?.map((at: any) => at.tag) || [],
+      coAuthors: article.coAuthors?.map((ca) => ca.user) || [],
+      categories: article.categories?.map((ac) => ac.category) || [],
+      tags: article.tags?.map((at) => at.tag) || [],
       lock: article.lock
         ? {
             lockedBy: article.lock.user,

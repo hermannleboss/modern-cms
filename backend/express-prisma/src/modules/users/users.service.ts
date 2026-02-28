@@ -1,7 +1,12 @@
+import { Prisma } from '@prisma/client';
 import prisma from '../../utils/prisma';
 import { hashPassword } from '../../utils/password';
 import { AppError } from '../../middlewares/error.middleware';
 import { CreateUserDto, UpdateUserDto } from './users.dto';
+
+type UserWithRole = Prisma.UserGetPayload<{
+  include: { role: true };
+}>;
 
 export class UsersService {
   async findAll(page = 1, limit = 20) {
@@ -143,7 +148,7 @@ export class UsersService {
     return { message: 'Permissions updated successfully' };
   }
 
-  private toDto(user: any) {
+  private toDto(user: UserWithRole) {
     return {
       id: user.id,
       email: user.email,
