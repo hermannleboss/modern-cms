@@ -66,7 +66,11 @@ function getErrorMessage(error: unknown): string {
 }
 
 async function handleSubmit() {
-  await login({ email: form.email, password: form.password });
-  navigateTo('/admin/articles');
+  try {
+    await login({ email: form.email, password: form.password });
+    navigateTo('/admin/articles');
+  } catch {
+    // loginError is set by useAuth — stay on login page
+  }
 }
 </script>
